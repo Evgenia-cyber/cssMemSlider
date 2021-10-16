@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  font-size: 1.2rem;
+  background-color: #2a2a2a;
+}
+
+.slider {
+  max-width: 100vw;
+  padding: calc((100vh - 455px - 62px) / 2) 1.04em; /*20px*/
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.container {
+  max-width: 31.25em; /* max-width: 600px; */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-img {
+  overflow: hidden;
+}
+
+.slider-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.slider-slides {
+  display: flex;
+  width: 400%; /* 4 slides */
+  transition: margin-left 0.6s ease-in-out;
+}
+
+/* Для управления стилем родственных элементов используется символ тильды (~), он добавляется между двумя селекторами E и F. Пробелы вокруг тильды не обязательны. Стиль при такой записи применяется к элементу F в том случае, если он имеет того же родителя, что и элемент E и следует сразу после него. */
+#btn-0:checked ~ .slider-img .slider-slides {
+  margin-left: 0;
+}
+
+#btn-1:checked ~ .slider-img .slider-slides {
+  margin-left: -100%;
+}
+
+#btn-2:checked ~ .slider-img .slider-slides {
+  margin-left: -200%;
+}
+
+#btn-3:checked ~ .slider-img .slider-slides {
+  margin-left: -300%;
+}
+
+.slider-bullets {
+  text-align: right;
+}
+
+.slider-bullets label {
+  display: inline-block;
+  width: 1.56em; /*width: 30px;*/
+  height: 1.56em;
+  cursor: pointer;
+}
+
+.slider-bullets label span {
+  display: block;
+  width: 0.625em; /*12px*/
+  height: 0.625em;
+  margin: 0.5em auto; /*9px*/
+  border-radius: 100%;
+  background: #849bff;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.slider-bullets label:hover span {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.slider-bullets label:active span {
+  background-color: #ffffff;
+  border: 2px solid #959595;
+}
+
+#btn-0:checked ~ .container-footer .slider-bullets label:nth-child(1) span,
+#btn-1:checked ~ .container-footer .slider-bullets label:nth-child(2) span,
+#btn-2:checked ~ .container-footer .slider-bullets label:nth-child(3) span,
+#btn-3:checked ~ .container-footer .slider-bullets label:nth-child(4) span,
+span {
+  border: 2px solid #849bff;
+  background-color: transparent;
+  transition: border-color 0.3s;
+}
+
+#btn-0:checked
+  ~ .container-footer
+  .slider-bullets
+  label:nth-child(1):hover
+  span,
+#btn-1:checked
+  ~ .container-footer
+  .slider-bullets
+  label:nth-child(2):hover
+  span,
+#btn-2:checked
+  ~ .container-footer
+  .slider-bullets
+  label:nth-child(3):hover
+  span,
+#btn-3:checked
+  ~ .container-footer
+  .slider-bullets
+  label:nth-child(4):hover
+  span {
+  border-color: #ffffff;
+}
+
+.container-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.container-slider {
+  overflow-x: hidden;
+}
+
+.container-slider,
+.slider-bullets {
+  flex: 1;
+}
+
+.slider-text {
+  display: flex;
+  width: 400%; /* 4 slides-text */
+  transition: margin-left 0.6s ease-in-out;
+}
+
+.slider-text p {
+  width: 100%;
+}
+
+#btn-0:checked ~ .container-footer .container-slider .slider-text {
+  margin-left: 0;
+}
+
+#btn-1:checked ~ .container-footer .container-slider .slider-text {
+  margin-left: -100%;
+}
+
+#btn-2:checked ~ .container-footer .container-slider .slider-text {
+  margin-left: -200%;
+}
+
+#btn-3:checked ~ .container-footer .container-slider .slider-text {
+  margin-left: -300%;
+}
+
+/* ****** media ******* */
+@media (max-width: 768px) {
+  .container-footer {
+    display: block;
+  }
+
+  .slider-bullets {
+    margin-top: 1.5em;
+    text-align: center;
+  }
+}
