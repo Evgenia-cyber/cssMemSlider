@@ -26,6 +26,8 @@ input[type='radio'] {
 }
 
 .slider-img img {
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -80,6 +82,11 @@ input[type='radio'] {
   border: 2px solid #ffffff;
 }
 
+.slider-bullets label:active span {
+  background-color: #ffffff;
+  border: 2px solid #959595;
+}
+
 #btn-0:checked ~ .container-footer .slider-bullets label:nth-child(1) span,
 #btn-1:checked ~ .container-footer .slider-bullets label:nth-child(2) span,
 #btn-2:checked ~ .container-footer .slider-bullets label:nth-child(3) span,
@@ -116,6 +123,7 @@ span {
 .container-footer {
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
 }
 
 .container-slider {
@@ -151,4 +159,16 @@ span {
 
 #btn-3:checked ~ .container-footer .container-slider .slider-text {
   margin-left: -300%;
+}
+
+/* ****** media ******* */
+@media (max-width: 768px) {
+  .container-footer {
+    display: block;
+  }
+
+  .slider-bullets {
+    margin-top: 1.5em;
+    text-align: center;
+  }
 }
