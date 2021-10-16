@@ -1,7 +1,7 @@
 body {
   margin: 0;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 
 .slider {
@@ -17,13 +17,17 @@ input[type='radio'] {
   display: none;
 }
 
-.slider-inner {
+.container {
   max-width: 600px;
   margin: 0 auto;
   overflow: hidden;
 }
 
-.slider-inner img {
+.slider-img {
+  overflow: hidden;
+}
+
+.slider-img img {
   border-radius: 10px;
 }
 
@@ -34,25 +38,24 @@ input[type='radio'] {
 }
 
 /* Для управления стилем родственных элементов используется символ тильды (~), он добавляется между двумя селекторами E и F. Пробелы вокруг тильды не обязательны. Стиль при такой записи применяется к элементу F в том случае, если он имеет того же родителя, что и элемент E и следует сразу после него. */
-#btn-0:checked ~ .slider-inner .slider-slides {
+#btn-0:checked ~ .slider-img .slider-slides {
   margin-left: 0;
 }
 
-#btn-1:checked ~ .slider-inner .slider-slides {
+#btn-1:checked ~ .slider-img .slider-slides {
   margin-left: -100%;
 }
 
-#btn-2:checked ~ .slider-inner .slider-slides {
+#btn-2:checked ~ .slider-img .slider-slides {
   margin-left: -200%;
 }
 
-#btn-3:checked ~ .slider-inner .slider-slides {
+#btn-3:checked ~ .slider-img .slider-slides {
   margin-left: -300%;
 }
 
 .slider-bullets {
-  margin: 0 auto;
-  text-align: center;
+  text-align: right;
 }
 
 .slider-bullets label {
@@ -79,19 +82,75 @@ input[type='radio'] {
   border: 2px solid #ffffff;
 }
 
-#btn-0:checked ~ .slider-bullets label:nth-child(1) span,
-#btn-1:checked ~ .slider-bullets label:nth-child(2) span,
-#btn-2:checked ~ .slider-bullets label:nth-child(3) span,
-#btn-3:checked ~ .slider-bullets label:nth-child(4) span,
+#btn-0:checked ~ .container-footer .slider-bullets label:nth-child(1) span,
+#btn-1:checked ~ .container-footer .slider-bullets label:nth-child(2) span,
+#btn-2:checked ~ .container-footer .slider-bullets label:nth-child(3) span,
+#btn-3:checked ~ .container-footer .slider-bullets label:nth-child(4) span,
 span {
   border: 2px solid #849bff;
   background-color: transparent;
   transition: border-color 0.3s;
 }
 
-#btn-0:checked ~ .slider-bullets label:nth-child(1):hover span,
-#btn-1:checked ~ .slider-bullets label:nth-child(2):hover span,
-#btn-2:checked ~ .slider-bullets label:nth-child(3):hover span,
-#btn-3:checked ~ .slider-bullets label:nth-child(4):hover span {
+#btn-0:checked
+  ~ .container-footer
+  .slider-bullets
+  label:nth-child(1):hover
+  span,
+#btn-1:checked
+  ~ .container-footer
+  .slider-bullets
+  label:nth-child(2):hover
+  span,
+#btn-2:checked
+  ~ .container-footer
+  .slider-bullets
+  label:nth-child(3):hover
+  span,
+#btn-3:checked
+  ~ .container-footer
+  .slider-bullets
+  label:nth-child(4):hover
+  span {
   border-color: #ffffff;
+}
+
+.container-footer {
+  display: flex;
+  align-items: center;
+}
+
+.container-slider {
+  overflow-x: hidden;
+}
+
+.container-slider,
+.slider-bullets {
+  flex: 1;
+}
+
+.slider-text{
+  display: flex;
+  width: 400%; /* 4 slides-text */
+  transition: margin-left 0.6s ease-in-out;
+}
+
+.slider-text p {
+  width: 100%;
+}
+
+#btn-0:checked ~ .container-footer .container-slider .slider-text {
+  margin-left: 0;
+}
+
+#btn-1:checked ~ .container-footer .container-slider .slider-text {
+  margin-left: -100%;
+}
+
+#btn-2:checked ~ .container-footer .container-slider .slider-text {
+  margin-left: -200%;
+}
+
+#btn-3:checked ~ .container-footer .container-slider .slider-text {
+  margin-left: -300%;
 }
