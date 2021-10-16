@@ -1,7 +1,8 @@
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .slider {
@@ -129,7 +130,7 @@ span {
   flex: 1;
 }
 
-.slider-text{
+.slider-text {
   display: flex;
   width: 400%; /* 4 slides-text */
   transition: margin-left 0.6s ease-in-out;
