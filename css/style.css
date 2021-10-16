@@ -57,32 +57,41 @@ input[type='radio'] {
 
 .slider-bullets label {
   display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.slider-bullets label span {
+  display: block;
   width: 12px;
   height: 12px;
-  margin: 0 10px;
+  margin: 9px auto;
   border-radius: 100%;
   background: #849bff;
   cursor: pointer;
   box-sizing: border-box;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-.slider-bullets label:hover {
+.slider-bullets label:hover span {
   background-color: #ffffff;
+  border: 2px solid #ffffff;
 }
 
-#btn-0:checked ~ .slider-bullets label:nth-child(1),
-#btn-1:checked ~ .slider-bullets label:nth-child(2),
-#btn-2:checked ~ .slider-bullets label:nth-child(3),
-#btn-3:checked ~ .slider-bullets label:nth-child(4) {
+#btn-0:checked ~ .slider-bullets label:nth-child(1) span,
+#btn-1:checked ~ .slider-bullets label:nth-child(2) span,
+#btn-2:checked ~ .slider-bullets label:nth-child(3) span,
+#btn-3:checked ~ .slider-bullets label:nth-child(4) span,
+span {
   border: 2px solid #849bff;
   background-color: transparent;
   transition: border-color 0.3s;
 }
 
-#btn-0:checked ~ .slider-bullets label:nth-child(1):hover,
-#btn-1:checked ~ .slider-bullets label:nth-child(2):hover,
-#btn-2:checked ~ .slider-bullets label:nth-child(3):hover,
-#btn-3:checked ~ .slider-bullets label:nth-child(4):hover {
+#btn-0:checked ~ .slider-bullets label:nth-child(1):hover span,
+#btn-1:checked ~ .slider-bullets label:nth-child(2):hover span,
+#btn-2:checked ~ .slider-bullets label:nth-child(3):hover span,
+#btn-3:checked ~ .slider-bullets label:nth-child(4):hover span {
   border-color: #ffffff;
 }
